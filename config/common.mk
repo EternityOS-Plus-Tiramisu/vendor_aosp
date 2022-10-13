@@ -130,7 +130,14 @@ PRODUCT_PACKAGES += \
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
-    NexusLauncherRelease
+
+ifneq ($(ETERNITY_GAPPS), minimal)
+PRODUCT_PACKAGES += \
+    ThemePicker \
+    Launcher3QuickStep
+else
+ifneq ($(ETERNITY_GAPPS), full)
+endif
 
 # Extra packages
 PRODUCT_PACKAGES += \
